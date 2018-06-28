@@ -1,0 +1,43 @@
+div.history {
+	font-size: .8em;
+	height: 14em;
+	border: 1px solid #ababab;
+	overflow-y: auto;
+	background: white;
+}
+
+div.history_fullmove {
+	display: flex;
+	flex-direction: row;
+	padding: 3px;
+}
+
+div.history_fullmove > div {
+	padding: .3em;
+	box-sizing: border-box;
+}
+
+div.history_fullmove:nth-child(even) {
+	background: #F7F7F7;
+}
+
+div.history_fullmove_number {
+	text-align: right;
+	width: 10%;
+	min-width: 3em;
+	padding-right: 1.5em !important;
+}
+
+div.history_move_label {
+	width: 40%;
+	cursor: pointer;
+}
+
+div.history_move_label:hover {
+	text-decoration: underline;
+}
+
+div.history_move_label.selected, div.history_move_label.selected:hover {
+	font-weight: bold;
+	text-decoration: none;
+}

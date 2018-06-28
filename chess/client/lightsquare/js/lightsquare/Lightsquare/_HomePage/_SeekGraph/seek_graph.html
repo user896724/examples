@@ -1,0 +1,43 @@
+<div class="seek_graph">
+	<div class="body_and_time_brackets">
+		<div class="seek_graph_body" style="height: {{graphHeightInEm}}em">
+			<div class="time_lines" style="height: {{graphHeightInEm}}em;">
+				{{#timeBrackets}}
+					<div style="width: {{timeBracketWidthInPercent}}%"></div>
+				{{/}}
+			</div>
+			<div class="seek_graph_seeks" style="height: {{graphHeightInEm}}em; top: -{{graphHeightInEm}}em">
+				{{#seeks:index}}
+					<div
+						class="seek {{seek.id === currentSeekId ? 'current_seek' : 'not_current_seek'}}"
+						style="top: {{topOffsetInEm}}em; left: {{leftOffsetInPercent}}%; height: {{seekHeightInEm}}em"
+						on-click="['accept', seek.id]"
+					>
+						<div class="seek_label">
+							<div class="seek_owner">
+								{{seek.owner}}
+							</div>
+							<div class="seek_time">
+								{{seek.initialTime}} | {{seek.timeIncrement}}
+							</div>
+						</div>
+					</div>
+				{{/}}
+			</div>
+			{{^seeks}}
+			<div class="no_seeks_message" style="height: {{graphHeightInEm}}em; top: -{{graphHeightInEm * 2}}em">
+				<div>
+					{{__("There are no active seeks")}}.
+				</div>
+			</div>
+			{{/}}
+		</div>
+		<div class="time_brackets">
+			{{#timeBrackets}}
+				<div>
+					{{label}}
+				</div>
+			{{/}}
+		</div>
+	</div>
+</div>

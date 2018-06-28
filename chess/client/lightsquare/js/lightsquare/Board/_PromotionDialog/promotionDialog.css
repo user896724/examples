@@ -1,0 +1,20 @@
+div.promotion_dialog {
+	border: 1px solid #606060;
+	background: #F4F4F4;
+}
+
+div.promotion_dialog_pieces {
+	display: flex;
+	border: 1px solid #bababa;
+	padding: 2px;
+}
+
+div.promotion_dialog_pieces > div {
+	margin: 2px;
+	cursor: pointer;
+}
+
+div.promotion_dialog_pieces > div:hover {
+	margin: 0;
+	border: 2px solid #3f3f3f;
+}

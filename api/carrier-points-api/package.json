@@ -1,0 +1,16 @@
+{
+	"name": "carrier-points-api",
+	"version": "1.0.0",
+	"description": "Retrieve nearest carrier drop-off points (Collect+, toyou, DPD, InPost)",
+	"author": "Gus Hogg-Blake <lightsquare@protonmail.com>",
+	"dependencies": {
+		"express": "~4.12.3",
+		"async": "~1.4.2",
+		"yargs": "~6.5.0",
+		"request": "^2.83.0",
+		"prelude-ls": "^1.1.2",
+		"uuid": "^3.2.1",
+		"soap": "^0.23.0",
+		"cors": "2.8.4"
+	}
+}

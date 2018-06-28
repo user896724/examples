@@ -1,0 +1,32 @@
+<div id="root" as-ref="'root'" class="board_root">
+	<div id="absolute_wrapper" as-ref="'absolute_wrapper'" class="board_absolute_wrapper">
+		<div id="rank_coords" as-ref="'rank_coords'" class="board_coords_container board_rank">
+
+		</div>
+		<div id="board_wrapper" as-ref="'board_wrapper'" class="board_board_wrapper">
+			<div id="promotion_dialog" as-ref="'promotion_dialog'" class="board_promotion_dialog">
+				
+			</div>
+			<div
+				id="animation_piece" as-ref="'animation_piece'"
+				class="board_animation_piece"
+				style="
+					display: {{animationInProgress ? '' : 'none'}};
+					top: {{moveAnimationY}}px;
+					left: {{moveAnimationX}}px;
+				"
+			>
+				
+			</div>
+			<div id="board" as-ref="'board'" class="board_board">
+
+			</div>
+		</div>
+		<div id="file_coords" as-ref="'file_coords'" class="board_coords_container board_file">
+
+		</div>
+	</div>
+	<audio id="move_sound" as-ref="'move_sound'" preload>
+		<source src="{{getAbsolutePath("./move.wav")}}" type="audio/wav">
+	</audio>
+</div>

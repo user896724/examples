@@ -1,0 +1,70 @@
+.board_square_root {
+	position: absolute;
+}
+
+.board_square_highlight {
+	position: absolute;
+	z-index: 0;
+	opacity: .9;
+}
+
+.board_square_piece {
+	position: absolute;
+	z-index: 1;
+}
+
+.board_square_root.board_square_brown.board_square_white {
+	background-color: #f0d9b5;
+}
+
+.board_square_root.board_square_brown.board_square_black {
+	background-color: #b58863;
+}
+
+.board_square_root.board_square_blue.board_square_white {
+	background-color: #F4F9F9;
+}
+
+.board_square_root.board_square_blue.board_square_black {
+	background-color: #3589A5;
+}
+
+.board_square_root.board_square_green.board_square_white {
+	background-color: #F9FFF2;
+}
+
+.board_square_root.board_square_green.board_square_black {
+	background-color: #7BA368;
+}
+
+.board_square_highlight_possibility {
+	background: #99e457;
+}
+
+.board_square_highlight_last_move_from {
+	background: #FFFED6;
+}
+
+.board_square_highlight_last_move_to {
+	background: #FFFAA5;
+}
+
+.board_square_highlight_premove_from {
+	background: #199a65;
+}
+
+.board_square_highlight_premove_to {
+	background: #199a65;
+}
+
+.board_square_highlight_can_select {
+	background: #fbfddd;
+}
+
+.board_square_highlight_can_drop {
+	background: #fbfddd;
+}
+
+.board_square_highlight_selected {
+	background: #c9f06b;
+}

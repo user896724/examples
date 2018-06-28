@@ -1,0 +1,15 @@
+version: '3'
+services:
+  client:
+    build: ./client
+    ports:
+    - "50000:80"
+  server:
+    build: ./server
+    ports:
+    - "50001:50001"
+    links:
+    - mongo
+    restart: on-failure
+  mongo:
+    build: ./db

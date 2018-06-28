@@ -1,0 +1,122 @@
+div.seek_graph {
+	display: flex;
+	background: white;
+}
+
+div.seek_graph_body {
+	flex-grow: 1;
+}
+
+div.seek_graph_body > div {
+	position: relative;
+}
+
+div.seek_graph_seeks {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+}
+
+div.time_lines {
+	display: flex;
+}
+
+div.time_lines > div {
+	box-sizing: border-box;
+	border-right: 1px solid #E2E2E2;
+}
+
+div.time_lines > div:last-child {
+	border-right: 0;
+}
+
+div.no_seeks_message {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+div.no_seeks_message > div {
+	font-size: 1.2em;
+	text-align: center;
+	color: #ababab;
+	padding: 1em;
+	background: white;
+}
+
+div.seek {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	position: relative;
+	z-index: 1;
+	box-sizing: border-box;
+	min-width: 5em;
+	border-right: 2px solid #489124;
+	padding: .3em .5em;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .25);
+	cursor: pointer;
+}
+
+div.seek.current_seek {
+	cursor: default;
+	border-right: 0;
+}
+
+div.seek.not_current_seek,
+div.seek.current_seek,
+div.seek.current_seek:hover
+{
+	background: #FFFFFF;
+}
+
+div.seek.not_current_seek:hover,
+div.seek.current_seek:hover {
+	z-index: 2;
+}
+
+div.seek.not_current_seek:hover {
+	background: #eeeeee;
+}
+
+div.seek_label {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+div.seek_owner {
+	font-size: .7em;
+	color: #606060;
+}
+
+div.seek_time {
+	font-size: .9em;
+}
+
+div.body_and_time_brackets {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+div.time_brackets {
+	display: flex;
+}
+
+div.time_brackets > div {
+	color: #333333;
+	font-size: .72em;
+	text-align: center;
+	box-sizing: border-box;
+	width: 20%;
+	border-right: 1px solid #bdbdbd;
+	padding: .2em;
+	background: #dbdbdb;
+}
+
+div.time_brackets > div:last-child {
+	border-right: 0;
+}

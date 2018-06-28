@@ -1,0 +1,15 @@
+<form class="login" on-submit="['submit']">
+	<h1>{{__("Log in")}}</h1>
+	<div class="login_form_fields">
+		<label>{{__("Username")}}</label>
+		<input type="text" value="{{username}}" autofocus>
+		<label>{{__("Password")}}</label>
+		<input type="password" value="{{password}}">
+	</div>
+	{{#error}}
+		<div class="form_error">
+			{{error}}
+		</div>
+	{{/}}
+	<input class="login" type="submit" value="{{__("Log in")}}">
+</form>

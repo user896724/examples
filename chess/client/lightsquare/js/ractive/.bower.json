@@ -1,0 +1,25 @@
+{
+  "name": "ractive",
+  "version": "0.3.8",
+  "main": "Ractive.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "release",
+    "sandbox",
+    "src",
+    "test",
+    "wrapper",
+    "Gruntfile.js"
+  ],
+  "homepage": "https://github.com/ractivejs/ractive",
+  "_release": "0.3.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.8",
+    "commit": "7be3b697d406557f396b0591ec3c8bad16a69434"
+  },
+  "_source": "https://github.com/ractivejs/ractive.git",
+  "_target": "0.3.8",
+  "_originalSource": "ractive"
+}

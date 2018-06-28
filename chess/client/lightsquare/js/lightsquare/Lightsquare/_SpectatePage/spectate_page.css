@@ -1,0 +1,53 @@
+div.spectate_page {
+	font-size: .85em;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	flex-grow: 1;
+	padding: 1em;
+	overflow-y: auto;
+}
+
+div.no_active_games {
+	color: #404040;
+}
+
+div.current_game {
+	flex-shrink: 0;
+	margin: 0 1em 1em 0;
+	cursor: pointer;
+}
+
+div.current_game_board {
+	position: absolute;
+	border: 1px solid #969696;
+}
+
+div.square {
+	position: absolute;
+}
+
+div.square.light {
+	background-color: #f0d9b5;
+}
+
+div.square.dark {
+	background-color: #b58863;
+}
+
+div.square.light.last_move_to,
+div.square.light.last_move_from {
+	background-color: #fdf6c2;
+}
+
+div.square.dark.last_move_to,
+div.square.dark.last_move_from {
+	background-color: #fff5ae;
+}
+
+div.current_game_details {
+	display: flex;
+	justify-content: space-between;
+	margin-top: .2rem;
+}

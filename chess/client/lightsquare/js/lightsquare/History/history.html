@@ -1,0 +1,15 @@
+<div class="history" id="history" as-ref="'history'">
+	{{#fullmoves}}
+		<div class="history_fullmove">
+			<div class="history_fullmove_number">
+				{{this.fullmove}}
+			</div>
+			<div class="history_move_label {{selectedMove === this.moves.w ? 'selected' : ''}}" on-click="['select', this.moves.w]">
+				{{this.moves.w.label}}
+			</div>
+			<div class="history_move_label {{selectedMove === this.moves.b ? 'selected' : ''}}" on-click="['select', this.moves.b]">
+				{{this.moves.b.label}}
+			</div>
+		</div>
+	{{/}}
+</div>

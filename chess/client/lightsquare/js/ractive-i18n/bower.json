@@ -1,0 +1,18 @@
+{
+	"name": "ractive-i18n",
+	"version": "1.0.0",
+	"authors": [
+		"Gus <gus@hogg-blake.co.uk>"
+	],
+	"description": "Ractive templates with built-in i18n functionality",
+	"moduleType": [
+		"amd"
+	],
+	"homepage": "http://gus.hogg-blake.co.uk",
+	"private": true,
+	"dependencies": {
+		"ractive": "0.3.8",
+		"sprintfjs": "*",
+		"i18n": "git://github.com/gushogg-blake/i18n.git#master"
+	}
+}

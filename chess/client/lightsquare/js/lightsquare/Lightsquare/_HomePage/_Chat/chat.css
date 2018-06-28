@@ -1,0 +1,42 @@
+div.general_chat {
+	font-size: .8em;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+	padding: 1px;
+}
+
+div.general_chat_history {
+	flex-grow: 1;
+	padding: .4em;
+	overflow-y: scroll;
+}
+
+form.general_chat_controls {
+	display: flex;
+	flex-shrink: 0;
+	margin: 1px 0 0 0;
+}
+
+input.general_chat_message {
+	flex-grow: 1;
+	margin: 0 1px 0 0;
+}
+
+input.general_chat_send {
+	color: #444444;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, .1);
+	margin: 0;
+	border: 1px solid #BFBFBF;
+	padding: 0 1em;
+	background: #E5E5E5;
+}
+
+span.general_chat_message_from {
+	color: #4f4f4f;
+}
+
+div.general_chat_message.message_type_admin {
+	font-weight: bold;
+	background: #FFFFEC;
+}

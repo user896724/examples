@@ -1,0 +1,44 @@
+div.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+div.modal_overlay {
+	position: fixed;
+	z-index: 10;
+	display: flex;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .32);
+}
+
+div.connection_problem {
+	font-size: .9em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+	padding: .3em;
+	box-shadow: 0 2px 1px rgba(0, 0, 0, .15);
+	background: #FFFFE2;
+}
+
+div.main {
+	display: flex;
+	flex-grow: 1;
+}
+
+div.tabs {
+	display: flex;
+	flex-grow: 1;
+}
+
+div.page {
+	display: flex;
+	flex-grow: 1;
+}

@@ -1,0 +1,28 @@
+div.play_home {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	flex-shrink: 0;
+	padding-top: 1em;
+}
+
+div.seeks {
+	flex-grow: 1;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+div.create_and_find {
+	display: flex;
+	flex-shrink: 0;
+}
+
+div.create_seek {
+	padding: .6em;
+	padding-left: 0;
+	background: #eeeeee;
+}
+
+div.home_chat {
+	display: flex;
+	flex-grow: 1;
+}

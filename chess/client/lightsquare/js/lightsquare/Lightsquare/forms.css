@@ -1,0 +1,101 @@
+input {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+input[type="text"], input[type="password"] {
+	box-sizing: border-box;
+	border: 1px solid #AAAAAA;
+	border-radius: 1px;
+	padding: .4em .5em;
+	box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .05);
+}
+
+a.button, input.button {
+	font-family: inherit;
+	font-size: inherit;
+	color: #3C84B7;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+	display: inline-block;
+	padding: .3em .0em;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+
+input[type="button"], input[type="submit"], a.button {
+	color: #2F4F00;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, .3);
+	margin-top: .5em;
+	border: 1px solid #648C2A;
+	border-radius: 2px;
+	padding: .3em 0;
+	background: #91B758;
+	cursor: pointer;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, a.button:hover {
+	text-decoration: underline;
+}
+
+input[type="button"]:active, input[type="submit"]:active, a.button:active {
+	box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .2);
+}
+
+input[type="button"].disabled,
+input[type="button"].disabled:active,
+input[type="button"].disabled:hover,
+a.button.disabled,
+a.button.disabled:active,
+a.button.disabled:hover {
+	color: #466B10;
+	box-shadow: none;
+	text-decoration: none;
+	cursor: default;
+}
+
+label {
+	font-size: .8em;
+}
+
+form.single_column {
+	display: flex;
+	flex-direction: column;
+	width: 12em;
+}
+
+form.single_column label {
+	color: #5E5E5E;
+	text-align: center;
+	margin: .5em 0 .1em 0;
+}
+
+form.single_column input {
+	text-align: center;
+}
+
+div.form_error {
+	font-size: .8em;
+	text-align: center;
+	color: #BA0000;
+	margin-top: .8em;
+	border: 1px solid #D1D1D1;
+	border-radius: 3px;
+	padding: .5em;
+}
+
+div.range_display_pair {
+	display: flex;
+}
+
+div.range_display_pair div.input {
+	
+}
+
+div.range_display_pair div.display {
+	border: 1px solid #bbbbbb;
+	border-radius: 2px;
+	padding: .2em .5em;
+	background: #ececec;
+}

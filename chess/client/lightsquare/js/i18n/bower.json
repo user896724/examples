@@ -1,0 +1,16 @@
+{
+	"name": "i18n",
+	"version": "1.0.0",
+	"authors": [
+		"Gus <gus@hogg-blake.co.uk>"
+	],
+	"description": "i18n functions",
+	"moduleType": [
+		"amd"
+	],
+	"homepage": "http://gus.hogg-blake.co.uk",
+	"private": true,
+	"dependencies": {
+		"sprintf": "*"
+	}
+}

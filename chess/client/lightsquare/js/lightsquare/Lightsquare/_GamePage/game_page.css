@@ -1,0 +1,167 @@
+div.game {
+	position: relative;
+	flex-grow: 1;
+	padding-left: .7em;
+	overflow-y: auto;
+}
+
+input.rematch.rematch_offered {
+	box-shadow: 0 0 3px rgba(255, 253, 234, .7);
+}
+
+div.game_details {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin-left: .8em;
+}
+
+div.game_board_and_controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.game_main {
+	display: flex;
+	padding: 1em 0;
+}
+
+div.game_board {
+	flex-shrink: 0;
+}
+
+div.prefs_panel {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+div.prefs_panel .board_buttons {
+	display: flex;
+	margin-right: .5em;
+}
+
+div.prefs_panel .board_buttons input {
+	font-size: .72em;
+	color: #303030;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, .4);
+	margin: 0 0 0 .17em;
+	border-color: #7f7f7f;
+	padding: .2em .7em;
+	background: #DADADA;
+}
+
+div.prefs_panel .board_buttons input:hover {
+	text-decoration: none;
+}
+
+label.game_page_pref {
+	font-size: .8em;
+	margin-right: .5em;
+}
+
+div.game_player {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: .7em 0;
+}
+
+div.game_player.player {
+	/*margin-top: .3em;*/
+}
+
+div.game_player.opponent {
+	/*margin-bottom: .3em;*/
+}
+
+div.game_player > div.details {
+	display: flex;
+	align-items: center;
+}
+
+div.player_connection_status {
+	font-size: .55em;
+}
+
+div.player_name, div.game_player div.player_clock {
+	padding: .35em;
+}
+
+div.game_player > div.score {
+	color: rgba(0, 0, 0, .8);
+	margin-right: .5em;
+	border-radius: 2px;
+	padding: .1em .25em;
+	background: rgba(0, 0, 0, .08);
+}
+
+div.game_player div.player_clock {
+	font-size: 1.2em;
+	font-weight: bold;
+	text-align: center;
+	min-width: 3.0em;
+	margin-right: .4em;
+	border-radius: 4px;
+	opacity: .8;
+}
+
+div.game_player div.player_clock.inactive_clock {
+	background: #dcdcdc;
+}
+
+div.history_and_captured {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+div.game_history {
+	width: 13.5em;
+}
+
+div.game_history, div.captured_pieces_container {
+	margin-bottom: .3em;
+}
+
+div.captured_pieces_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+	margin-left: .3em;
+}
+
+div.captured_piece {
+	flex-shrink: 0;
+}
+
+div.captured_piece_row {
+	display: flex;
+}
+
+div.captured_pieces.player {
+	margin-top: .3em;
+}
+
+div.game_controls {
+	display: flex;
+}
+
+div.game_controls input {
+	color: #404040;
+	margin: 0 .2em 0 0;
+	border-color: #b0b0b0;
+	padding: .3em .6em;
+	background: #f7f7f7;
+}
+
+div.game_controls input.disabled,
+div.game_controls input.disabled:active,
+div.game_controls input.disabled:hover {
+	color: #9E9E9E;
+}
+
+div.game_chat {
+}

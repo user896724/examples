@@ -1,0 +1,19 @@
+div.player_clock {
+	padding: 0 .2em;
+	border-radius: 2px;
+}
+
+div.game_tab_clock {
+	margin-top: .2em;
+	padding: .1em .2em;
+	background: #b4bbbe;
+}
+
+div.active_clock {
+	color: white;
+	background: #548614;
+}
+
+div.critical_clock {
+	background: #912222;
+}

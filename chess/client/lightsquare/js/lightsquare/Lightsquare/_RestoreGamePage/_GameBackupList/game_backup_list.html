@@ -1,0 +1,64 @@
+<div class="game_backup_list">
+	{{^hasBackups}}
+		<div class="no_game_backups">
+			<div class="no_game_backups_message">
+				<p>
+					{{__("Any games you play will be shown here for one day after the last activity. If the server crashes during a game, the players can use this interface to submit their local game details when it comes back online. If both players do this, the game will be immediately resumed and the active player will be reimbursed any time that has passed since the last move.")}}
+				</p>
+			</div>
+		</div>
+	{{/}}
+	{{#hasBackups}}
+		{{#gameBackups:id}}
+			<div class="game_backup">
+				<div class="game_backup_title">
+					<div>
+						{{details.opponent.name}} ({{details.opponent.rating}}) {{details.timingDescription}}
+					</div>
+					<div>
+						Started {{formatDate(details.gameDetails.startTime)}}
+					</div>
+				</div>
+				<div class="game_backup_body">
+					<div class="game_backup_board" id="board_{{id}}" as-ref="'board_{{id}}'">
+						
+					</div>
+					<div class="game_backup_details">
+						<div class="game_backup_history">
+							{{#game.history}}
+								<span
+									class="game_backup_move {{selectedMove[id] === this ? 'selected_move' : ''}}"
+									on-click="['select_move', id]"
+								>
+									{{colour.fenString === 'w' ? fullLabel : label}}
+								</span><span>&nbsp;</span>
+							{{/}}
+						</div>
+						<div class="game_backup_controls">
+							<div>
+								{{#restorationRequestSubmitted[id]}}
+									<span class="game_backup_restoration_submitted">
+										{{__("Game details submitted for restoration.  Waiting for opponent...")}}
+									</span>
+								{{/}}
+								{{#error[id]}}
+									<span class="game_restoration_error">
+										{{error[id]}}
+									</span>
+								{{/}}
+							</div>
+							<div>
+								<input
+									class="restore_game"
+									type="button"
+									on-click="['restore_or_cancel', id]"
+									value="{{__(restorationRequestSubmitted[id] ? "Cancel" : "Restore")}}"
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		{{/}}
+	{{/}}
+</div>

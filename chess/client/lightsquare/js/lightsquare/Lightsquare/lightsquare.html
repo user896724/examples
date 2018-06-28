@@ -1,0 +1,121 @@
+<div class="modal_overlay" on-click="['background_click']" style="{{dialog ? '' : 'display: none'}}">
+	<div class="register_dialog" style="{{dialog === 'register' ? '' : 'display: none'}}" on-click="['foreground_click']">
+		<div id="register_form" as-ref="'register_form'" style="{{registered ? 'display: none' : ''}}">
+			
+		</div>
+		{{#registered}}
+			<h1>Registration successful.</h1>
+			<div class="register_success">
+				<p>
+					{{__("Your account has been created")}}.
+				</p>
+				{{^registerAutoLoggedIn}}
+					<p>
+						({{__("You can log in to your account after completing any games and logging out of any other accounts")}}.)
+					</p>
+				{{/}}
+			</div>
+			<div class="register_done">
+				<input type="button" class="register_done" on-click="['register_done']" value="OK" autofocus>
+			</div>
+		{{/}}
+	</div>
+	<div class="login_dialog" style="{{dialog === 'login' ? '' : 'display: none'}}" on-click="['foreground_click']">
+		<div id="login_form" as-ref="'login_form'">
+			
+		</div>
+	</div>
+</div>
+<div class="container" on-click="['background_click']">
+	<div class="top_bar">
+		<div class="nav">
+			{{#navLinks.home}}
+				<a on-click="['navigate']" href="{{getHref(href)}}" class="{{currentPath === href ? 'on' : 'off'}}">{{__(label)}}</a>
+			{{/}}
+		</div>
+		<div class="control_panel">
+			{{#userIsLoggedIn}}
+				{{username}} (<a href="javascript:void(0)" on-click="['logout']"><span on-click="['foreground_click']">{{__("Log out")}}</span></a>)
+			{{/}}
+			{{^userIsLoggedIn}}
+				<a href="javascript:void(0)" on-click="['login']"><span on-click="['foreground_click']">{{__("Log in")}}</span></a>
+				&nbsp;&nbsp;
+				<a href="javascript:void(0)" on-click="['register']"><span on-click="['foreground_click']">{{__("Create account")}}</span></a>
+			{{/}}
+			<span>&nbsp;</span>
+			<select value="{{selectedLocale}}">
+				{{#locales:locale}}
+					<option value="{{locale}}">{{locale}}</option>
+				{{/}}
+			</select>
+		</div>
+	</div>
+	{{#showLogoutConfirmation}}
+		<div class="logout_confirmation_container">
+			<div class="logout_confirmation">
+				<div class="logout_confirmation_message">
+					{{__("You must finish all games before logging out")}}.
+				</div>
+				<div class="logout_confirmation_buttons">
+					<input type="button" class="logout_confirm" on-click="['logout_confirm']" value="Resign all games and log out">
+					<input type="button" class="logout_cancel" on-click="['logout_cancel']" value="Cancel">
+				</div>
+			</div>
+		</div>
+	{{/}}
+	{{#!serverConnected && !waitingForServer}}
+		<div class="connection_problem">
+			{{__("Connection problem: if you see this after reloading, the server may have gone down. Otherwise, check your internet connection.")}}
+		</div>
+	{{/}}
+	{{#waitingForServer}}
+		{{>connectingMessage}}
+	{{/}}
+	<div class="main" style="{{waitingForServer ? 'display: none' : ''}}">
+		{{#hasGames || loadingGame}}
+			<div class="games">
+				{{#gamePages}}
+					<a
+					   on-click="['navigate']"
+					   href="{{getHref(href)}}"
+					   class="nav_game {{currentPath === href ? 'on' : 'off'}}"
+					>
+						<div class="nav_game_title">
+							<div>
+								{{userIsPlaying ? opponent : white + ' vs ' + black}}
+							</div>
+							<div class="nav_game_timing_style">
+								{{timingStyle}}
+							</div>
+						</div>
+						{{#userIsPlaying && isInProgress}}
+							<div
+								class="
+									nav_game_clock player_clock game_tab_clock
+									{{#isInProgress && userIsActivePlayer}}
+										active_clock
+										{{#playerTime < timeCriticalThreshold}}
+											critical_clock
+										{{/}}
+									{{/}}
+								"
+							>
+								{{getColonDisplay(playerTime)}}
+							</div>
+						{{/}}
+					</a>
+				{{/}}
+				{{#loadingGame}}
+					<a
+					   on-click="['navigate']"
+					   href="{{getHref('/game/' + loadingGameId)}}"
+					   class="{{currentPath === '/game/' + loadingGameId ? 'on' : 'off'}}"
+					>{{__("Loading game")}}...</a>
+				{{/}}
+			</div>
+		{{/}}
+		<div class="tabs" id="tabs" as-ref="'tabs'">
+			
+		</div>
+	</div>
+</div>

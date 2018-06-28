@@ -1,0 +1,31 @@
+div.top_bar {
+	font-size: .85em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-shrink: 0;
+	padding: .5em 0;
+	border-bottom: 1px solid #d0d0d0;
+}
+
+div.nav a {
+	color: #404040;
+	text-decoration: none;
+	margin-right: 1em;
+}
+
+div.nav a.on {
+	color: black;
+}
+
+div.control_panel {
+}
+
+div.control_panel a {
+	color: #404040;
+	text-decoration: none;
+}
+
+div.control_panel a:hover {
+	color: #404040;
+}

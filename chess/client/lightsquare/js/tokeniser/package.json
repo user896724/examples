@@ -1,0 +1,11 @@
+{
+	"name": "tokeniser",
+	"version": "1.0.0",
+	"description": "Simple string tokeniser",
+	"author": "Gus Hogg-Blake <gus@hogg-blake.co.uk>",
+	"dependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/gushogg-blake/tokeniser.git"
+	}
+}

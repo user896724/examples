@@ -1,0 +1,9 @@
+{
+	"processed": "../compiled/",
+	"exclude": [
+		".git"
+	],
+	"process": {
+		"**/*.ls": "lsc -o {{processedDir}} {{originalPath}}"
+	}
+}

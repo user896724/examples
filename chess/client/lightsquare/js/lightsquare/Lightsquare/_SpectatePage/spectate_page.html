@@ -1,0 +1,53 @@
+<div class="spectate_page">
+	{{#games:id}}
+		<div class="current_game" on-click="['click_game', id]">
+			<div
+				class="current_game_board_wrapper"
+				style="
+					width: {{squareSize * 8}}px;
+					height: {{squareSize * 8}}px;
+				"
+			>
+				<div
+					class="current_game_board"
+					style="
+						width: {{squareSize * 8}}px;
+						height: {{squareSize * 8}}px;
+					"
+				>
+					{{#boardArray:squareNo}}
+						<div
+							class="
+								square
+								{{getSquareColour(squareNo) === 'w' ? 'light' : 'dark'}}
+								{{lastMove.from === squareNo ? 'last_move_from' : ''}}
+								{{lastMove.to === squareNo ? 'last_move_to' : ''}}
+							"
+							style="
+								top: {{getSquareY(squareNo, id) * squareSize}}px;
+								left: {{getSquareX(squareNo, id) * squareSize}}px;
+								width: {{squareSize}}px;
+								height: {{squareSize}}px;
+								background-image: url('{{pieceUrl}}');
+								background-position: {{getPieceOffset(this)}}px 0;
+								background-repeat: no-repeat;
+							"
+						></div>
+					{{/}}
+				</div>
+			</div>
+			<div class="current_game_details">
+				<div>
+					<b>{{white}} vs {{black}}</b>
+				</div>
+				<div>
+					{{timingDescription}}
+				</div>
+			</div>
+		</div>
+	{{else}}
+		<div class="no_active_games">
+			There are no active games.
+		</div>
+	{{/}}
+</div>

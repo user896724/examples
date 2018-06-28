@@ -1,0 +1,39 @@
+div.register_form h1 {
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0;
+}
+
+form.register {
+	flex-grow: 1;
+	margin-top: .7em;
+}
+
+div.register_label {
+	margin-top: .3em;
+	padding: .2em 0;
+}
+
+div.register_input {
+	display: flex;
+}
+
+div.register_input input[type="text"],
+div.register_input input[type="password"]
+{
+	flex-grow: 1;
+}
+
+input.register {
+	padding: .3em 1em;
+}
+
+div.register_form_error {
+	font-size: .8em;
+	text-align: center;
+	color: #BA0000;
+	margin-top: .8em;
+	border: 1px solid #D1D1D1;
+	border-radius: 3px;
+	padding: .5em;
+}

@@ -1,0 +1,20 @@
+{
+	"name": "sup",
+	"version": "3.2.1",
+	"description": "Simple Update Propagation: a library for propagating data updates in web apps",
+	"author": "Gus Hogg-Blake <gus@hogg-blake.co.uk>",
+	"dependencies": {
+		"amdefine": "*",
+		"requirejs": "*",
+		"Array.prototype": "https://github.com/gushogg-blake/Array.prototype/archive/master.tar.gz"
+	},
+	"keywords": [
+		"updates",
+		"synchronisation",
+		"framework",
+		"websocket",
+		"template",
+		"view",
+		"automatic"
+	]
+}

@@ -1,0 +1,32 @@
+<form class="single_column create_seek" on-submit="['create_or_cancel']">
+	<label for="initialTime">{{__("Initial time")}}</label>
+	<input id="initialTime" as-ref="'initialTime'" type="text" value="{{initialTime}}" title="{{__("Accepts units, e.g. '2 days 3h 30 min' (defaults to minutes if no units given)")}}">
+	<label for="increment">{{__("Increment")}}</label>
+	<input id="increment" as-ref="'increment'" type="text" value="{{timeIncrement}}" title="{{__("Accepts units, e.g. '1m30' (defaults to seconds if no units given)")}}">
+	<label for="acceptRatingMin" title="{{__("Minimum rating of players who can see and accept the seek")}}">{{__("Min. opponent rating")}}</label>
+	<input id="acceptRatingMin" as-ref="'acceptRatingMin'" type="text" value="{{ratingMin}}" title="{{__("Accepts relative ratings, e.g. '-150' to accept a minimum rating of 150 below your own")}}">
+	<label for="acceptRatingMax" title="{{__("Maximum rating of players who can see and accept the seek")}}">{{__("Max. opponent rating")}}</label>
+	<input id="acceptRatingMax" as-ref="'acceptRatingMax'" type="text" value="{{ratingMax}}" title="{{__("Accepts relative ratings, e.g. '+150' to accept a maximum rating of 150 above your own")}}">
+	{{#error}}
+		<div class="form_error">
+			{{__(error)}}
+		</div>
+	{{/}}
+	{{#waiting}}
+		<input
+			class="create_seek waiting"
+			style="background-image: linear-gradient(
+				to left,
+				#CED1C4 0%,
+				#CED1C4 {{percentExpired - .5}}%,
+				transparent {{percentExpired + .5}}%,
+				transparent 100%
+			)"
+			type="submit"
+			value="{{__("Cancel")}}"
+		>
+	{{/}}
+	{{^waiting}}
+		<input class="create_seek" type="submit" value="{{__("Start game")}}">
+	{{/}}
+</form>

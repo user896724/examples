@@ -1,0 +1,13 @@
+{
+	"name": "jsonchess",
+	"version": "2.1.0",
+	"description": "Protocol for playing chess online",
+	"author": "Gus Hogg-Blake <gus@hogg-blake.co.uk>",
+	"dependencies": {
+		"chess": "git://github.com/gushogg-blake/chess.git"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/jsonchess/jsonchess.git"
+	}
+}

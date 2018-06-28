@@ -1,0 +1,33 @@
+div.logout_confirmation_container {
+	position: relative;
+	z-index: 2;
+	flex-grow: 1;
+}
+
+div.logout_confirmation {
+	font-size: .9em;
+	position: absolute;
+	right: 0;
+	padding: .5em .8em;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+	background: #fdfced;
+}
+
+div.logout_confirmation input {
+	padding: .3em .5em;
+}
+
+div.logout_confirmation_buttons {
+	display: flex;
+	justify-content: center;
+}
+
+input.logout_confirm {
+}
+
+input.logout_cancel {
+	color: #212121;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+	border: 1px solid #A0A0A0;
+	background: #E2E2E2;
+}

@@ -1,0 +1,31 @@
+<div class="register_form">
+	<h1>{{__("Create account")}}</h1>
+	<form class="register" on-submit="['submit']">
+		<div class="register_label">
+			<label for="register_username">{{__("Username")}}</label>
+		</div>
+		<div class="register_input">
+			<input type="text" value="{{username}}" id="register_username" as-ref="'register_username'" autofocus>
+		</div>
+		<div class="register_label">
+			<label for="register_password">{{__("Password")}}</label>
+		</div>
+		<div class="register_input">
+			<input type="password" value="{{password}}" id="register_password" as-ref="'register_password'">
+		</div>
+		<div class="register_label">
+			<label for="register_password_confirm">{{__("Confirm password (optional)")}}</label>
+		</div>
+		<div class="register_input">
+			<input type="password" value="{{password_confirm}}" id="register_password_confirm" as-ref="'register_password_confirm'">
+		</div>
+		{{#error}}
+			<div class="register_form_error">
+				{{error}}
+			</div>
+		{{/}}
+		<div class="register_input">
+			<input type="submit" class="register" value="{{__("Create account")}}">
+		</div>
+	</form>
+</div>

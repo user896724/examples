@@ -1,0 +1,55 @@
+div.tournaments_page {
+	flex-grow: 1;
+}
+
+div.create_tournament_panel {
+	padding: .4em;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+input.create_tournament_dialog, input.create_tournament {
+	color: rgba(255, 255, 255, 0.93);
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, .5);
+	margin: 0;
+	border: 0;
+	padding: .4em 1em;
+	background-image: linear-gradient(to top, #5B86B0 0%, #52B4E7 100%);
+}
+
+input.create_tournament {
+	margin-top: .5em;
+	background-image: linear-gradient(to top, #595959 0%, #848484 100%);
+}
+
+div.create_dialog {
+	width: 35%;
+	margin: 5% auto auto auto;
+	border-radius: 3px;
+	padding: .8em;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, .3);
+	background: white;
+}
+
+form.create_tournament h1 {
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0;
+}
+
+div.tournament_form_fields {
+	display: flex;
+	flex-direction: column;
+	margin-top: .5em;
+}
+
+div.tournament_form_fields label {
+	margin-top: .3em;
+	padding: .2em 0;
+}
+
+div.tournament_players {
+	justify-content: space-between;
+}
+
+input.tournament_players {
+}

@@ -1,0 +1,74 @@
+<div class="modal_overlay" on-click="['background_click']" style="{{dialog ? '' : 'display: none'}}">
+	<div class="create_dialog" style="{{dialog === 'create' ? '' : 'display: none'}}" on-click="['foreground_click']">
+		<form class="create_tournament" on-submit="['create', players(playersInput)]">
+			{{#if tournamentCreated}}
+				<div class="tournament_created">
+					success
+				</div>
+			{{else}}
+				<h1>{{__("New tournament")}}</h1>
+				<div class="tournament_form_fields">
+					<label for="tournament_name">{{__("Name (optional)")}}</label>
+					<input type="text" id="tournament_name" as-ref="'tournament_name'" value="{{name}}" autofocus>
+					<label for="tournament_initial_time">{{__("Initial time")}}</label>
+					<input type="text" id="tournament_initial_time" as-ref="'tournament_initial_time'" value="{{initialTime}}" title="{{__("Accepts units, e.g. '2 days 3h 30 min' (defaults to minutes if no units given)")}}">
+					<label for="tournament_time_increment">{{__("Increment")}}</label>
+					<input type="text" id="tournament_time_increment" as-ref="'tournament_time_increment'" value="{{timeIncrement}}" title="{{__("Accepts units, e.g. '1m30' (defaults to seconds if no units given)")}}">
+					<label for="players">{{__("Players")}}</label>
+					<div class="range_display_pair tournament_players">
+						<div class="input tournament_players">
+							<input class="tournament_players" type="range" min="2" max="6" value="{{playersInput}}">
+						</div>
+						<div class="display">
+							{{players(playersInput)}}
+						</div>
+					</div>
+				</div>
+				{{#if error}}
+					<div class="form_error">
+						{{error}}
+					</div>
+				{{/}}
+				<input class="create_tournament" type="submit" value="{{__("Start")}}">
+			{{/}}
+		</form>
+	</div>
+</div>
+<div class="tournaments_page">
+	<div class="create_tournament_panel">
+		<input class="create_tournament_dialog" type="button" on-click="['open_create_dialog']" value="{{__("Create tournament")}}">
+	</div>
+	<div class="tournaments">
+		{{#tournaments}}
+			<div class="tournament">
+				<div class="details">
+					{{#if name}}
+						<div class="name">
+							{{name}}
+						</div>
+					{{/}}
+					<div class="time">
+						{{timeDescription}}
+					</div>
+					{{#if !inProgress}}
+						<div class="action">
+							<input
+								type="button"
+								class="tournament_action"
+								on-click="['join_or_leave']"
+								value="{{__(playerJoined ? "Withdraw" : "Join")}}"
+							>
+						</div>
+					{{/}}
+				</div>
+				<div class="status">
+					{{#if inProgress}}
+						In progress
+					{{else}}
+						{{playersRequired - players.length}} players required
+					{{/}}
+				</div>
+			</div>
+		{{/}}
+	</div>
+</div>

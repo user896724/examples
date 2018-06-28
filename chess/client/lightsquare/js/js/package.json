@@ -1,0 +1,13 @@
+{
+	"name": "js",
+	"version": "1.0.0",
+	"description": "JavaScript utilities",
+	"author": "Gus Hogg-Blake <gus@hogg-blake.co.uk>",
+	"dependencies": {
+		"Array.prototype": "git://github.com/gushogg-blake/Array.prototype.git"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/gushogg-blake/js.git"
+	}
+}

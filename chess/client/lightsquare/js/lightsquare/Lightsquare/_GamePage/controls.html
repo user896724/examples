@@ -1,0 +1,52 @@
+<div class="game_controls">
+	{{#isInProgress}}
+		<input
+			type="button"
+			on-click="['resign']"
+			value="{{__("Resign")}}"
+		>
+		<input
+			type="button"
+			on-click="['offer_or_accept_draw']"
+			value="{{(drawOffered && userIsActivePlayer) ? __("Accept draw") : __("Offer draw")}}"
+			class="{{
+				(
+					(!drawOffered && !userIsActivePlayer)
+					|| (drawOffered && userIsActivePlayer)
+				) ? '' : 'disabled'
+			}}"
+		>
+		{{#canClaimDraw}}
+			<input type="button" on-click="['claim_draw']" value="{{__("Claim draw")}}">
+		{{/}}
+	{{/}}
+	{{^isInProgress}}
+		{{#playerHasOfferedRematch}}
+			<input type="button" on-click="['cancel_rematch']" value="{{__("Cancel")}}" class="cancel_rematch">
+		{{/}}
+		{{#opponentHasOfferedRematch}}
+			<input type="button" on-click="['rematch']" value="{{__("Rematch")}}" class="rematch rematch_offered">
+			<input type="button" on-click="['decline_rematch']" value="{{__("Decline")}}" class="decline_rematch">
+		{{/}}
+		{{#(!opponentHasOfferedRematch && !playerHasOfferedRematch)}}
+			<input type="button" on-click="['rematch']" value="{{__("Rematch")}}" class="rematch">
+		{{/}}
+		{{#newSeekWaiting}}
+			<input
+				style="background-image: linear-gradient(
+					to left,
+					transparent 0%,
+					transparent {{newSeekPercentExpired - .5}}%,
+					#E0E0E0 {{newSeekPercentExpired + .5}}%,
+					#E0E0E0 100%
+				)"
+				type="button"
+				on-click="['cancel_new_game']"
+				value="{{__("Cancel")}}"
+			>
+		{{/}}
+		{{^newSeekWaiting}}
+			<input type="button" on-click="['new_game']" value="{{__("New")}} {{timingDescription}}">
+		{{/}}
+	{{/}}
+</div>

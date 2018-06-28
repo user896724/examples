@@ -1,0 +1,112 @@
+<div class="game">
+	<div class="game_main">
+		<div class="game_board" id="board" as-ref="'board'" on-contextmenu="['cancel_premove']">
+			
+		</div>
+		<div class="game_details">
+			<div class="prefs_panel">
+				<div class="board_buttons">
+					<input type="button" on-click="['board_size_down']" value="-">
+					<input type="button" on-click="['board_size_up']" value="+">
+					<input type="button" on-click="['board_flip']" value="{{__("Flip board")}}">
+				</div>
+				<!--<input type="checkbox" on-change="['toggle', 'premove']" checked="{{prefs.premove}}" id="premove" as-ref="'premove'">
+				<label class="game_page_pref" for="premove">{{__("Premove")}}</label>-->
+				<input type="checkbox" on-change="['toggle', 'alwaysQueen']" checked="{{prefs.alwaysQueen}}" id="alwaysQueen" as-ref="'alwaysQueen'">
+				<label class="game_page_pref" for="alwaysQueen">{{__("Always queen")}}</label>
+				<input type="checkbox" on-change="['toggle', 'sound']" checked="{{prefs.sound}}" id="sound" as-ref="'sound'">
+				<label class="game_page_pref" for="sound">{{__("Sound")}}</label>
+			</div>
+			<div class="prefs_panel">
+			</div>
+			<div class="game_player opponent">
+				<div class="details">
+					<div class="player_clock {{isInProgress && !viewingActivePlayer ? ('active_clock' + (players.opponent.time < timeCriticalThreshold ? ' critical_clock' : '')) : 'inactive_clock'}}">
+						{{getColonDisplay(players.opponent.time)}}
+					</div>
+					<div class="player_name">
+						{{players.opponent.name}} ({{players.opponent.rating}})
+					</div>
+					<div class="player_connection_status">
+						{{#players.opponent.isUser}}
+							{{#players.opponent.id !== userPlayerId}}
+								{{#players.opponent.isConnected}}
+									<img src="{{getAbsolutePath('./connected.png')}}">
+								{{else}}
+									<img src="{{getAbsolutePath('./disconnected.png')}}">
+								{{/}}
+							{{/}}
+						{{else}}
+							[BOT]
+						{{/}}
+					</div>
+				</div>
+				{{#result !== null}}
+					<div class="score">
+						{{players.opponent.score}}
+					</div>
+				{{/}}
+			</div>
+			<div class="history_and_captured">
+				<div class="game_history" id="history" as-ref="'history'">
+					
+				</div>
+				<div class="captured_pieces_container">
+					{{#capturedPieces:playerRelevance}}
+						<div class="captured_pieces {{playerRelevance}}">
+							{{#this:pieceClass}}
+								<div class="captured_piece_row">
+									{{#this}}
+										<div
+											class="captured_piece"
+											style="
+												width: {{capturedPieceSize}}px;
+												height: {{capturedPieceSize}}px;
+												background-image: url('{{capturedPieceSprite}}');
+												background-position: {{getPieceOffset(.)}}px 0;
+											"
+										></div>
+									{{/}}
+								</div>
+							{{/}}
+						</div>
+					{{/}}
+				</div>
+			</div>
+			{{#userIsPlaying}}
+				{{>controls}}
+			{{/}}
+			<div class="game_player player">
+				<div class="details">
+					<div class="player_clock {{isInProgress && viewingActivePlayer ? ('active_clock' + (players.player.time < timeCriticalThreshold ? ' critical_clock' : '')) : 'inactive_clock'}}">
+						{{getColonDisplay(players.player.time)}}
+					</div>
+					<div class="player_name">
+						{{players.player.name}} ({{players.player.rating}})
+					</div>
+					<div class="player_connection_status">
+						{{#players.player.isUser}}
+							{{#players.player.id !== userPlayerId}}
+								{{#players.player.isConnected}}
+									<img src="{{getAbsolutePath('./connected.png')}}">
+								{{else}}
+									<img src="{{getAbsolutePath('./disconnected.png')}}">
+								{{/}}
+							{{/}}
+						{{else}}
+							[BOT]
+						{{/}}
+					</div>
+				</div>
+				{{#result !== null}}
+					<div class="score">
+						{{players.player.score}}
+					</div>
+				{{/}}
+			</div>
+			<div class="game_chat" id="chat" as-ref="'chat'">
+				
+			</div>
+		</div>
+	</div>
+</div>

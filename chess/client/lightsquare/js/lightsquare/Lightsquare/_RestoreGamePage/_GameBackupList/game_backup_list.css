@@ -1,0 +1,87 @@
+div.game_backup_list {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+div.game_backup {
+	flex-shrink: 0;
+	border-bottom: 1px solid #bababa;
+	padding: .5em;
+}
+
+div.game_backup:nth-child(even) {
+	background: #efefef;
+}
+
+div.game_backup_title {
+	font-size: 1.2em;
+	color: #595959;
+	display: flex;
+	justify-content: space-between;
+}
+
+div.game_backup_body {
+	display: flex;
+	margin-top: .5em;
+}
+
+div.game_backup_board {
+	flex-shrink: 0;
+}
+
+div.game_backup_details {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+	margin-left: .4em;
+}
+
+div.game_backup_history {
+	font-size: .9em;
+}
+
+span.game_backup_move {
+	cursor: pointer;
+}
+
+span.game_backup_move.selected_move {
+	font-weight: bold;
+}
+
+div.game_backup_controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+input.restore_game {
+	color: #424242;
+	text-shadow: none;
+	border-color: #969696;
+	padding: .3em 1em;
+	background: #F4F4F4;
+}
+
+input.restore_game.submitted {
+	
+}
+
+div.no_game_backups {
+	text-align: center;
+	color: #656565;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+div.no_game_backups_message {
+	padding: 1em;
+}
+
+div.no_game_backups h1 {
+	font-size: 1.3em;
+	font-weight: normal;
+}

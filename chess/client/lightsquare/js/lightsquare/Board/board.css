@@ -1,0 +1,62 @@
+div.board_root.board_with_surround {
+	border: 1px solid #cfcfcf;
+	background: #efefef;
+}
+
+div.board_absolute_wrapper {
+	position: absolute;
+}
+
+div.board_board_wrapper {
+	position: absolute;
+	border-color: #808080;
+	border-style: solid;
+	border-width: 0;
+}
+
+div.board_board {
+	position: absolute;
+}
+
+div.board_animation_piece {
+	position: absolute;
+	z-index: 2;
+}
+
+div.board_promotion_dialog {
+	position: absolute;
+	display: none;
+	z-index: 2;
+}
+
+div.board_coords_container {
+	font-size: 12px;
+	color: #404040;
+	position: absolute;
+}
+
+div.board_coords_container.board_file {
+	height: 18px;
+	line-height: 18px;
+	left: 18px;
+}
+
+div.board_coords_container.board_rank {
+	left: 5px;
+}
+
+div.board_root.board_with_surround .board_coords_container.board_rank {
+	top: 18px;
+}
+
+div.board_coord {
+	font-family: sans-serif;
+	text-align: center;
+	position: absolute;
+	cursor: default;
+	user-select: none;
+}
+
+div.board_coord.board_rank {
+	margin-top: 1px;
+}
